@@ -1,0 +1,3 @@
+Chat based on a single document.
+This can be used for analysing single documents like "software agreement", NDA(Non-Disclosure Agreement).
+RAG is not required for such small docs. LLMs implement caching, querying the same document will reduce the cost.
