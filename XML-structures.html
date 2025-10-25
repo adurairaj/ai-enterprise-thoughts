@@ -86,3 +86,34 @@
 </Employee>
 
 </code>
+<code>
+  Join example:
+  <Joins>
+    <Join 
+        name="EmployeeDepartmentJoin" 
+        type="inner" 
+        description="Join Employee and Department XMLs where Employee.deptId = Department.departmentId">
+
+        <!-- Participating XMLs -->
+        <Left file="Employee.xml" alias="Emp"/>
+        <Right file="Department.xml" alias="Dept"/>
+
+        <!-- Field Matching (join definitions) -->
+        <Match>
+            <LeftPath>/Employee/deptId</LeftPath>
+            <RightPath>/Department/departmentId</RightPath>
+            <Operator>=</Operator>
+        </Match>
+
+        <!-- Example: multiple join fields -->
+        <!--
+        <Match>
+            <LeftPath>/Employee/courseId</LeftPath>
+            <RightPath>/Department/courseCode</RightPath>
+            <Operator>=</Operator>
+        </Match>
+        -->
+    </Join>
+</Joins>
+
+</code>
