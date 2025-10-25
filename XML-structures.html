@@ -1,0 +1,88 @@
+<h1>XML structures</h1>
+<h2>Table structure</h2>
+<code>
+  Readable Schema format:
+  <Employee>
+    <EmployeeID nodeId="E101" type="integer" required="true">101</EmployeeID>
+    <FirstName type="string" required="true">John</FirstName>
+    <LastName type="string" required="false">Doe</LastName>
+    <Designation type="string" required="false">Software Engineer</Designation>
+    <Department type="string" required="true">IT</Department>
+
+    <Skills>
+        <Skill many="true">
+            <SkillID nodeId="S1" type="integer" required="true">1</SkillID>
+            <Name type="string" required="true">Python</Name>
+            <Level type="string" required="true">Expert</Level>
+            <ExperienceYears type="integer" required="false">5</ExperienceYears>
+        </Skill>
+    </Skills>
+
+    <Family>
+        <Member many="true">
+            <MemberID nodeId="F1" type="integer" required="true">1</MemberID>
+            <Relation type="string" required="true">Spouse</Relation>
+            <Name type="string" required="true">Jane Doe</Name>
+            <Age type="integer" required="true">35</Age>
+            <Occupation type="string" required="false">Teacher</Occupation>
+            <School type="string" required="false">Greenwood Elementary</School>
+        </Member>
+    </Family>
+</Employee>
+
+  Instance format:
+  
+  <Employee>
+    <EmployeeID nodeId="E101">101</EmployeeID>
+    <FirstName>John</FirstName>
+    <LastName>Doe</LastName>
+    <Designation>Software Engineer</Designation>
+    <Department>IT</Department>
+
+    <Skills>
+        <Skill>
+            <SkillID nodeId="S1">1</SkillID>
+            <Name>Python</Name>
+            <Level>Expert</Level>
+            <ExperienceYears>5</ExperienceYears>
+        </Skill>
+        <Skill>
+            <SkillID nodeId="S2">2</SkillID>
+            <Name>Java</Name>
+            <Level>Intermediate</Level>
+            <ExperienceYears>3</ExperienceYears>
+        </Skill>
+        <Skill>
+            <SkillID nodeId="S3">3</SkillID>
+            <Name>Machine Learning</Name>
+            <Level>Advanced</Level>
+            <ExperienceYears>4</ExperienceYears>
+        </Skill>
+    </Skills>
+
+    <Family>
+        <Member>
+            <MemberID nodeId="F1">1</MemberID>
+            <Relation>Spouse</Relation>
+            <Name>Jane Doe</Name>
+            <Age>35</Age>
+            <Occupation>Teacher</Occupation>
+        </Member>
+        <Member>
+            <MemberID nodeId="F2">2</MemberID>
+            <Relation>Child</Relation>
+            <Name>Emily Doe</Name>
+            <Age>8</Age>
+            <School>Greenwood Elementary</School>
+        </Member>
+        <Member>
+            <MemberID nodeId="F3">3</MemberID>
+            <Relation>Child</Relation>
+            <Name>Ethan Doe</Name>
+            <Age>5</Age>
+            <School>Greenwood Elementary</School>
+        </Member>
+    </Family>
+</Employee>
+
+</code>
