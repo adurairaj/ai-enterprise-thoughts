@@ -1,5 +1,66 @@
 <h1>Persistance layer concepts</h1>
 <ul><li><h2>RDBMS</h2></li>
-<h3>SQL</h3>
-<h2>NoSQL</h2>
+  <Entity name="Employee" version="1.0" description="Represents employee master data">
+    
+    <!-- Metadata for tracking and lineage -->
+    <Meta>
+        <PrimaryKey>EmployeeID</PrimaryKey>
+        <Audit enabled="true">
+            <CreatedBy>system</CreatedBy>
+            <CreatedOn>2025-11-21</CreatedOn>
+            <UpdatedBy></UpdatedBy>
+            <UpdatedOn></UpdatedOn>
+        </Audit>
+    </Meta>
+
+    <!-- Field Definitions -->
+    <Fields>
+        <Field name="EmployeeID" type="integer" required="true" nodeId="E101" key="true">101</Field>
+        <Field name="FirstName" type="string" required="true">John</Field>
+        <Field name="LastName" type="string" required="false">Doe</Field>
+        <Field name="Designation" type="string" required="false">Software Engineer</Field>
+        <Field name="DepartmentID" type="string" required="true" refNodeId="D10">D10</Field>
+    </Fields>
+
+    <!-- Nested Entities / Relationships -->
+    <NestedEntities>
+
+        <NestedEntity name="Skills" many="true">
+            <Field name="SkillID" type="integer" key="true" nodeId="S1">1</Field>
+            <Field name="SkillName" type="string" required="true">Python</Field>
+            <Field name="Level" type="string">Expert</Field>
+            <Field name="ExperienceYears" type="integer">5</Field>
+        </NestedEntity>
+
+        <NestedEntity name="Family" many="true">
+            <Field name="MemberID" type="integer" key="true" nodeId="F1">1</Field>
+            <Field name="Relation" type="string" required="true">Spouse</Field>
+            <Field name="Name" type="string">Jane Doe</Field>
+            <Field name="Age" type="integer">35</Field>
+            <Field name="Occupation" type="string">Teacher</Field>
+        </NestedEntity>
+
+    </NestedEntities>
+
+    <!-- Join Relationships -->
+    <Joins>
+        <Join 
+            name="EmployeeDepartmentJoin"
+            type="inner"
+            description="Connect Employee.DepartmentID with Department.departmentId">
+            
+            <Left file="Employee.xml" alias="Emp"/>
+            <Right file="Department.xml" alias="Dept"/>
+            
+            <Match>
+                <LeftPath>/Employee/DepartmentID/@refNodeId</LeftPath>
+                <RightPath>/Department/DepartmentID/@nodeId</RightPath>
+                <Operator>=</Operator>
+            </Match>
+        </Join>
+    </Joins>
+</Entity>
+
+<li><h3>SQL</h3></li>
+<li><h2>NoSQL</h2></li>
 </ul>
