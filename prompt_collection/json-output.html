@@ -1,36 +1,188 @@
-Prompt:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Prompt & AI Response Examples</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f7;
+      color: #222;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 24px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    }
+
+    h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .example {
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+      padding: 16px 18px;
+      margin-bottom: 18px;
+      background: #fafafa;
+    }
+
+    .example-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: #eef2ff;
+      color: #3730a3;
+    }
+
+    .prompt-label,
+    .response-label {
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 4px;
+    }
+
+    .prompt-text {
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: #f0f9ff;
+      border: 1px solid #e0f2fe;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      white-space: pre-line;
+    }
+
+    pre {
+      margin: 0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: #111827;
+      color: #e5e7eb;
+      overflow-x: auto;
+      font-size: 0.9rem;
+    }
+
+    code {
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    .footer-note {
+      margin-top: 24px;
+      font-size: 0.8rem;
+      color: #777;
+      border-top: 1px dashed #ddd;
+      padding-top: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>Prompt &amp; AI Response Examples</h1>
+    <div class="subtitle">
+      Demonstration of prompts asking for JSON responses and how the AI replies, including handling of spelling mistakes.
+    </div>
+
+    <!-- Example 1 -->
+    <div class="example">
+      <div class="example-header">
+        <span>Example 1</span>
+        <span class="badge">Basic JSON response</span>
+      </div>
+
+      <div class="prompt-section">
+        <div class="prompt-label">Prompt:</div>
+        <div class="prompt-text">
 What is the capital of USA?
 Generate the response in JSON format.
+        </div>
+      </div>
 
-AI response:
-```json
-{
+      <div class="response-section">
+        <div class="response-label">AI Response:</div>
+        <pre><code>{
   "capital": "Washington, D.C."
-}
-```
-Prompt:
+}</code></pre>
+      </div>
+    </div>
+
+    <!-- Example 2 -->
+    <div class="example">
+      <div class="example-header">
+        <span>Example 2</span>
+        <span class="badge">JSON with additional field</span>
+      </div>
+
+      <div class="prompt-section">
+        <div class="prompt-label">Prompt:</div>
+        <div class="prompt-text">
 What is the capital of USA?
 Generate the response in JSON format.
 In the response add the country name also.
+        </div>
+      </div>
 
-AI Response:
-```json
-{
+      <div class="response-section">
+        <div class="response-label">AI Response:</div>
+        <pre><code>{
   "country": "United States of America",
   "capital": "Washington, D.C."
-}
-```
+}</code></pre>
+      </div>
+    </div>
 
-Prompt(LLM smart enough to fix spelling mistakes):
+    <!-- Example 3 -->
+    <div class="example">
+      <div class="example-header">
+        <span>Example 3</span>
+        <span class="badge">Handling spelling mistakes</span>
+      </div>
+
+      <div class="prompt-section">
+        <div class="prompt-label">Prompt (LLM smart enough to fix spelling mistakes):</div>
+        <div class="prompt-text">
 What is th e captal of France?
 Generate response in JSON format.
+        </div>
+      </div>
 
-AI Response:
-```json
-{
+      <div class="response-section">
+        <div class="response-label">AI Response:</div>
+        <pre><code>{
   "capital": "Paris",
   "country": "France"
-}
-```
+}</code></pre>
+      </div>
+    </div>
 
-
+    <div class="footer-note">
+      Note: These examples illustrate how AI can return structured JSON outputs and correct minor spelling issues in user prompts.
+    </div>
+  </div>
+</body>
+</html>
