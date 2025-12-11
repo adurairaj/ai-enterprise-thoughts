@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Telecom Intent Classification Techniques</title>
+</head>
+<body>
+    <h1>Telecom Intent Classification Techniques</h1>
+
+    <ol>
+        <li>
+            <strong>Rule-Based Approaches</strong>
+            <ul>
+                <li><strong>Keyword Matching:</strong> Using telecom-specific keywords (e.g., "bill," "upgrade," "outage") to map text to predefined intents.</li>
+                <li><strong>Regular Expressions:</strong> Pattern matching for structured queries, such as account numbers or plan codes.</li>
+                <li><strong>Decision Trees:</strong> Manually crafted flowcharts based on customer interaction scripts.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Machine Learning (Traditional)</strong>
+            <ul>
+                <li><strong>Bag-of-Words (BoW) + Classifiers:</strong> Text is converted into word counts/vectors and classified using algorithms like Logistic Regression, SVM, or Random Forests.</li>
+                <li><strong>TF-IDF Features:</strong> Weighing words by frequency and importance; features fed to classifiers as above.</li>
+                <li><strong>n-gram Models:</strong> Capturing short sequences of words, useful for common phrases in telecom (e.g., "change my plan").</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Deep Learning Approaches</strong>
+            <ul>
+                <li><strong>Convolutional Neural Networks (CNNs):</strong> Effective for extracting local features from text, such as common telecom complaint patterns.</li>
+                <li><strong>Recurrent Neural Networks (RNNs) & LSTMs/GRUs:</strong> Capture sequential dependencies, useful for longer and context-rich queries.</li>
+                <li><strong>Attention Mechanisms:</strong> Help the model focus on key words or phrases indicating intent.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Transformer-Based Models</strong>
+            <ul>
+                <li><strong>BERT, RoBERTa, DistilBERT:</strong> Pre-trained transformer models can be fine-tuned for intent classification, providing state-of-the-art accuracy. Custom telecom datasets improve results.</li>
+                <li><strong>Domain-Specific Transformers:</strong> Models like TelecomBERT (trained on telecom-related data) can further enhance performance.</li>
+                <li><strong>Prompt Engineering (for LLMs):</strong> Carefully crafted prompts to guide large language models (like GPT-4) to classify intent directly.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Hybrid Approaches</strong>
+            <ul>
+                <li><strong>Rule-Based + ML:</strong> Combine rules for high-precision cases and ML for generalization.</li>
+                <li><strong>Ensemble Methods:</strong> Blend outputs of multiple models (e.g., BoW+SVM and BERT) for higher accuracy.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Unsupervised and Semi-Supervised Techniques</strong>
+            <ul>
+                <li><strong>Clustering (e.g., K-means):</strong> Grouping similar queries to identify emergent intents.</li>
+                <li><strong>Active Learning:</strong> Model requests labels for uncertain cases, reducing annotation costs.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Multimodal and Contextual Methods</strong>
+            <ul>
+                <li><strong>Session-Based Models:</strong> Use conversation history to disambiguate intent (e.g., prior questions about billing may hint the next is also billing-related).</li>
+                <li><strong>Multimodal Fusion:</strong> Combine text, voice, and metadata (e.g., device type, location) for richer intent signals.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Specialized Telecom Techniques</strong>
+            <ul>
+                <li><strong>Ontology-Based Classification:</strong> Use of a telecom-specific intent ontology (hierarchy of intents/sub-intents).</li>
+                <li><strong>Custom Entity Recognition:</strong> Extract telecom-specific entities (plan names, device models) to aid intent classification.</li>
+                <li><strong>Dialog State Tracking:</strong> Maintaining context across multi-turn conversations for accurate intent prediction.</li>
+            </ul>
+        </li>
+    </ol>
+</body>
+</html>
