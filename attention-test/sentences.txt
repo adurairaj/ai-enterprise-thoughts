@@ -1,0 +1,8 @@
+Pour the coffee from jar into the cup until it is empty.
+--Empty refers "jar"
+Pour the coffee from the jar into the cup until it is full.
+--full refers "cup"
+
+Get one red bell pepper. If you see red apples get five. 
+-- "get" refers apple and not bell pepper.
+
