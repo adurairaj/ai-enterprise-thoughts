@@ -16,3 +16,4 @@ Can you answer the following questions without digging into your code?
 5. How many queries join more than 2 tables?
 6. What service class should I use to fetch customer.address?
 7. In a given REST API how many times database is hit?
+8. What REST APIs are used in this screen?
